@@ -2,15 +2,20 @@ import React from 'react';
 import { Image, View, StyleSheet, Text } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { FontAwesome5 as Icon } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+ 
+import Header from '../../components/Header';
 
 const Home = () => {
+  const navigation = useNavigation();
 
   const handleOnPress = () => {
-    console.log("Botão clicado!");
+    navigation.navigate('CreateRecord');  
   }
 
   return (
     <>
+    <Header />
       <View style={styles.container}>
         <Image style={styles.gamerImage} source={require('../../assets/gamer.png')} />
         <Text style={styles.title}>Vote agora!</Text>
